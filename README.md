@@ -1,6 +1,6 @@
 # bigyellow
 // JavaScript Document
-///////////////////DOM2级兼容////////////////////////////////////
+//DOM2
 
    function addHande(obj,type,hander){
 		if(obj.addEventListener){
@@ -20,7 +20,7 @@
 		obj['on'+type]= null;	
 			}
 		}
-////////////////getElementsByClassName//////////////////////////
+//getElementsByClassName
 	function getElementsByClassName(parent,classname,tagname){
        var _aels = parent.getElementsByTagName(tagname);
 	   var arr =[];
@@ -36,7 +36,7 @@
 	}	
     return arr;
   }
-///////////////////getStyle函数////////////////////////////////////
+//getStyle
     function getStyle (obj,attr){
      return obj.currentStyle?obj.currentStyle[attr]:getComputedStyle(obj)[attr];		
 		}
@@ -57,7 +57,7 @@
 		}
 		}
 	
-////////////////////数组中匹配相同值//////////////////////////////		
+//arrIndex		
     function arrIndex(arr,v){
 		for(var i=0;i<arr.length;i++){
 			if(arr[i]== v){
@@ -66,30 +66,30 @@
 			}
 		return -1;
 		}
-////////////////////运动函数doMove减速运动////////////////////////////////完美运动框架
+//doMove
 
    function doMove(obj,json[attr],timers,speednum,fn){
     clearInterval(obj.timer)
     obj.timer = setInterval(function(){
     var iStop = true;
-    for(attr in json){                             //json循环
+    for(attr in json){                            
         //取当前值
 	    var iCur =0 ;
-	    if(attr=='opacity'){                      //属性为opacity时
-	    iCur=parseInt(parseFloat(getStyle(obj,attr))*100);//计算机最好不小数，小数出错，转换成整数
+	    if(attr=='opacity'){                      
+	    iCur=parseInt(parseFloat(getStyle(obj,attr))*100);
 	    }else{
 	    iCur=parseInt(getStyle(obj,attr));
 	    }
 
         //算速度
-	   var iSpeed = (json[attr] - iCur)/speednum;   //速度   （目标位置-当前位置）/速度系数
+	   var iSpeed = (json[attr] - iCur)/speednum;   
 	    iSpeed = iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
         //检测停止
         if(iCur!=json[attr] ){
            iStop=false;
         }
 
-        if(attr== 'opacity'){                        //属性为opacity时
+        if(attr== 'opacity'){                        
 	     obj.style.filter = 'alpha(opacity='+(iCur + iSpeed)+')';//filter:alpha(opacity=)渐变
 	     obj.style.opacity = (iCur + iSpeed)/100;//opacity渐变
 	     }else{
@@ -100,10 +100,10 @@
     }
       if(iStop){
 	      clearInterval(obj.timer)
-	      fn && fn();                                 //回调函数存在，执行
+	      fn && fn();                                 
 	    }
    },timers)
 
 
    }
-///////////////////////////////////////////////
+
