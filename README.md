@@ -1,6 +1,4 @@
-# bigyellow
 // JavaScript Document
-//DOM2
 
    function addHande(obj,type,hander){
 		if(obj.addEventListener){
