@@ -67,7 +67,7 @@
 		}
 ////////////////////运动函数doMove减速运动////////////////////////////////完美运动框架
 
-   function doMove(obj,json[attr],timers,speednum,fn){
+   function doMove(obj,json,timers,speednum,fn){
     clearInterval(obj.timer)
     obj.timer = setInterval(function(){
     var iStop = true;
@@ -92,7 +92,7 @@
 	     obj.style.filter = 'alpha(opacity='+(iCur + iSpeed)+')';//filter:alpha(opacity=)渐变
 	     obj.style.opacity = (iCur + iSpeed)/100;//opacity渐变
 	     }else{
-	    obj.style[attr]= iCur + iSpeed; 
+	    obj.style[attr]= iCur + iSpeed+'px'; 
 	     }
 
 	   
