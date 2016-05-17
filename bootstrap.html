@@ -2,11 +2,35 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="X-UA-compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="X-UA-compatible" content="IE=edge">
+        <!--国产浏览器高速模式 -->
+        <meta name="renderer" content="webkit">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+	<style>
+		/*window8 IE10 windowphone 兼容模式 CSS*/
+		@-webkit-viewport   { width: device-width; }
+                @-moz-viewport      { width: device-width; }
+                @-ms-viewport       { width: device-width; }
+                @-o-viewport        { width: device-width; }
+                @viewport           { width: device-width; }
+	</style>
+	<script>
+		/*window8 IE10 windowphone 兼容模式 JS*/
+		// Copyright 2014-2015 Twitter, Inc.
+                // Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+                if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+                   var msViewportStyle = document.createElement('style')
+                            msViewportStyle.appendChild(
+                                  document.createTextNode(
+                                  '@-ms-viewport{width:auto!important}'
+                                  )
+                            )
+                  document.querySelector('head').appendChild(msViewportStyle)
+                }
+	</script>
 </head>
 
 
